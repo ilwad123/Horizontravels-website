@@ -6,6 +6,7 @@ This project began as a university **Software Lab coursework** for developing a 
 - Adding Docker support for easier local deployment  
 - Deploying the system live on the cloud via **PythonAnywhere**  
 - Improving structure and maintainability  
+-added respnsiveness for all devices
 
 The result is a **full-stack web application** for booking flights, with admin tools and secure user functionality.
 
@@ -17,6 +18,7 @@ You can try the live site here:
 🔗 **[https://ilwad.pythonanywhere.com/](https://ilwad.pythonanywhere.com/)**  
 
 You can register, book a flight, view your trips, or log in as admin to manage everything.
+Can be accessed on any device and is responsive
 
 
 ---
