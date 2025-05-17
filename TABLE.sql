@@ -30,7 +30,6 @@ CREATE TABLE flight_payment (
     cardNo VARCHAR(16) NOT NULL UNIQUE,
     cardname VARCHAR(256) NOT NULL,
     expirydate VARCHAR(5) NOT NULL, 
-    CVV VARCHAR(4) NOT NULL,
     totalprice INT NOT NULL,
     FOREIGN KEY (CustID) REFERENCES customer(CustID)
         ON DELETE CASCADE 
@@ -107,26 +106,5 @@ INSERT INTO plane_cost(price,flightID)VALUES
 (75,19),
 (75,20),
 (75,21);
-insert into flight_payment(CustID,cardNo,cardname,expirydate,CVV,totalprice)values
-(1,9453622,'ghs','06/23',312,120),/* FLIGHT ID 4 */
-(2,8624524,'kilis','02/29',123,240),/*FLIGHTID 6*/
-(3,6734521,'nosman','09/22',234,75),/*FLIGHTID 10*/
-(4,7623412,'kau','01/24',568,300),/*flightid 15*/
-(5,74251212,'lou','09/24',837,810),/*flightid 9*/
-(6,81232151,'mou','08/35',675,140),/*FLIGHTID18*/
-(7,12312409,'sue','09/25',890,400),/*FLIGHTID 2*/
-(8,23431524,'ana','09/26',567,225),/*fLIGHTId 11*/
-(9,64531241,'kultuma','09/26',908,200);/* FLIGHTID 14*/
-
--- INSERT INTO Ticket_details(BookingID,CustID,FlightID,totalprice,Departure_date,Arrival_date,totalseats,class)VALUES
--- (1,1,4,120,'2023-06-01','2023-06-19',5,'Business'),
--- (2,2,6,240,'2023-01-10','2023-02-10',6,'Economy'),
--- (3,3,10,75,'2023-02-18','2023-03-19',1,'Economy'),
--- (4,4,15,300,'2023-09-10','2023-09-12',2,'Business'),
--- (5,5,9,810,'2023-10-10','2023-10-30',4,'Economy'),
--- (6,6,18,140,'2023-11-09','2023-12-10',11,'Economy'),
--- (7,7,2,400,'2023-12-01','2023-12-04',2,'Business'),
--- (8,8,11,225,'2023-08-10','2023-09-01',2,'Business'),
--- (9,9,14,200,'2023-09-11','2023-09-20',3,'Economy');
 
 SELECT * FROM customer;
