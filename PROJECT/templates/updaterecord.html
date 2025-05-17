@@ -1,0 +1,89 @@
+<!-- <html>
+    <a href="adminuser">Back to admin page</a>
+<title>Adding a journey route </title>
+
+<form action="/generateupdaterecord" method="POST">   
+    <label>Departure </label>
+    <input type="text" name="Destination" id="Destination" /> <br/>
+    <label>Departure Time</label>
+    <input type="text" name="Destination_time" id="Destination_time"   /> <br/>
+    <label>Arrival</label>
+    <input type="text" name="Arrival" id="Arrival"  /> <br/>
+    <label>Arrival time</label>
+    <input type="text" name="Arrival_time" id="Arrival_time"   /> <br/>
+
+    <input type="submit" value="Search" />
+</form>
+</html> -->
+
+<!--Ilwad Abdi student id =22014624-->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/update.css')}}">
+    </head>
+<div class="container1">
+  <a href="adminuser" style="color:white;">Back to admin page</a>
+
+     <fieldset>
+    <div class="title">Add a new journey</div>
+    <br>
+    <div class="content">
+    <form action="/generateupdaterecord" method="POST">
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+        <li class="flash-{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+      <div class="user">
+
+
+
+            <div class="name">
+            <div class="input-box">
+              <input type="text"  placeholder="Destination"name="Destination" id="Destination" required style="height:40px">
+            </div>
+           </div>
+           <br>
+           <div class="surname">
+            <div class="input-box">
+            <input type="time" placeholder="Destination Time" name="Destination_time" id="Destination_time" required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <div class="username">
+            <div class="input-box">
+            <input type="text"placeholder="Arrival" name="Arrival" id="Arrival" name="Arrival" required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <div class="email">
+            <div class="input-box">
+              <input type="time"  placeholder="Arrival time" name="Arrival_time" id="Arrival_time"  required style="height:40px">
+            </div>
+            </div>
+            <BR>
+            <div class="email">
+            <div class="input-box">
+              <input type="number"  placeholder="Price per ticket" name="price" id="price"  required style="height:40px">
+            </div>
+            </div>
+            <br>
+            
+          <br>
+          <div class="button">
+            <input type="submit" value="Add journey">
+          </div>
+      </div>
+    </div>
+
+    </form>
+  </div>
+ 
+</fieldset>

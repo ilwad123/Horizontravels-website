@@ -1,0 +1,30 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/adminuser.css')}}">
+
+</head>
+<body>
+	<div>		
+		<h1>Admin Features Page </h1>
+        <h2>Welcome {{username}} !</h2> 
+        <p style="color:green;"> {{message}} </p>        		
+	</div>
+</br>
+  <div class="size">
+    <button type="button" onclick="location.href='/addrecordpage';">Add user record</button>
+    <button type="button" onclick="location.href='/showupdatepage';">Add new flight record</button>
+    <button type="button" onclick="location.href='/showdeletepage';">Delete flight record</button>
+    <button type="button" onclick="location.href='/generateadminreport';">Make reports</button> <br/>
+  </div>
+  <div class="admin-links">
+   <a href='/logout/'> Logout </a>
+   <br>
+   <br>
+  <a href="/">Return to main page</a>     
+</div>
+ 
+</body>
+</html>

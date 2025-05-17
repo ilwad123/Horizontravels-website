@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/update.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/delete.css') }}">
+    <title>Delete Journey</title>
+</head>
+<body>
+<div class="container1">
+    <fieldset>
+        <div class="title">Delete a Journey</div>
+        <br>
+
+        <div class="content">
+            <a href="{{ url_for('adminuser') }}" style="color:black;">← Back to Admin Page</a>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+        <li class="flash-{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+            <table class="flight-table">
+                <thead>
+                    <tr>
+                        <th>Flight ID</th>
+                        <th>Destination</th>
+                        <th>Departure Time</th>
+                        <th>Arrival</th>
+                        <th>Arrival Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flight in datarows %}
+                    <tr>
+                        <td>{{ flight[0] }}</td>
+                        <td>{{ flight[1] }}</td>
+                        <td>{{ flight[2] }}</td>
+                        <td>{{ flight[3] }}</td>
+                        <td>{{ flight[4] }}</td>
+                        <td>
+                            <form action="{{ url_for('generatedeleterecord') }}" method="POST">
+                                <input type="hidden" name="FlightID" value="{{ flight[0] }}">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this journey?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+</body>
+</html>

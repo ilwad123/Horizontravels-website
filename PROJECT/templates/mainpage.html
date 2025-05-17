@@ -1,0 +1,30 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Main page </title>
+</head>
+<body>
+    <h1 style='color:blue;'>
+        Welcome to User Management Page            
+    </h1>   
+    <p style='color:green;'>{{optionalmessage}}</p>
+    <a href="/register/">Register user</a>    
+    <br/>
+    <a href="/Login">Login</a>
+    <br/>
+    
+    
+    {% if usertype == 'admin' %}
+        <a href="/adminfeatures/">Admin Features</a> <br/>
+        <a href="/logout/">Logout</a>
+    {% endif %}
+
+    {% if usertype == 'standard' %}
+        <a href="/userfeatures/">User Features</a> <br/>
+        <a href="/logout/">Logout</a>
+    {% endif %}       
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/bookingstart.css')}}">
+</head>
+<header>
+  <nav class="navbar">
+    
+    <img src="{{url_for('static',filename='images/horizonlogo.jpg')}}" height="50px;">
+
+    <div class="container">
+  <ul class="menu">
+  {% if session.logged_in %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+    </li>
+   <li class="nav-item">
+    <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+    </li>
+  <li class="nav-item">
+   <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+    </li>  
+  <li class="nav-item">
+      <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+         </li> 
+  {%else%}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+    </li>
+   <li class="nav-item">
+    <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+    </li>
+  <li class="nav-item">
+   <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+    </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for ('Login')}}">Login</a>
+     </li> 
+    {%endif%}
+  </ul>
+</div>
+  <div class="hamburger">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+  </div>
+  </nav>
+  </header>
+  <script src="{{url_for('static',filename='hamburger.js')}}"></script> 
+  <BR>
+  <BR>
+    <body>
+        <div class="booking-container">
+  <h1> Booking details </h1>
+<BR>
+  <div class="booking">
+    <form action="/booking_confirm/" method="POST">   
+        Departure City : {{lookupdata[0]}} <br/>
+        <input type="hidden" name="deptcity" id="deptcity" value="{{lookupdata[0]}}"/>
+        Arrival City : {{lookupdata[1]}} <br/>
+        <input type="hidden" name="arrivcity" id="arrivcity" value="{{lookupdata[1]}}"/>
+        Destination Date : {{lookupdata[2]}} <br/>
+        <input type="hidden" name="Departure_date" id="Departure_date" value="{{lookupdata[2]}}"/>
+        Return Date : {{lookupdata[3]}} <br/>
+        <input type="hidden" name="Arrival_date" id="Arrival_date" value="{{lookupdata[3]}}"/>
+        Adult Seats : {{lookupdata[4]}} <br/>
+        <input type="hidden" name="Adultseat" id="Adultseat" value="{{lookupdata[4]}}"/>
+        Child Seats : {{lookupdata[5]}} <br/>
+        <input type="hidden" name="Childseat" id="Childseat" value="{{lookupdata[5]}}"/>
+        Class  : {{lookupdata[6]}} <br/>
+        <input type="hidden" name="Class" id="Class" value="{{lookupdata[6]}}"/>
+    </div>
+  </div>
+ <br>
+
+	  <table border = 1> 
+        <tr>
+            <th> Departure Time </th> <th> Arrival Time </th>  
+            <th> Standard fare (£) </th> <th> Total price (£) </th> 
+            <th> Select option </th>
+        </tr>
+        
+	    {% for row in resultset %}
+	    <tr> 
+            <td> {{row[2]}} </td> 
+            <td> {{row[4]}} </td> 
+            <td> {{row[5]}} </td>              
+             <td> {{row[6]}} </td>
+             <input type="hidden" name="totalprice" id="totalprice" value="{{row[6]}}"/>
+            <td> <input type="radio" name="bookingchoice" value="{{row[0]}}" checked></td> 
+        </tr> 
+        
+	   {% endfor %} 
+	  </table>  
+    <br/>
+    <div class="Payment">
+      <fieldset>
+    <H2> Payment </H2>
+      <div class="text">Full name on card: </div>
+      <input type="text" name="cardname" id="cardname"  value="{{request.form.cardname}}" required/> <br/>
+      <div class="text">Card number: </div>
+      <input type="number" name="cardNo" id="cardNo" max="9999999999999999" size="16" value="{{request.form.cardNo}}"required/> <br/>
+      <div class="text">Card expiry: </div>
+      <input type="text" name="expirydate" id="expirydate" max="9999" size="4"  value="{{request.form.expirydate}}" required/> <br/>
+      <div class="text">CVV:</div>
+      <input type="number" name="CVV" id="CVV" max="999" size="3" required  value="{{request.form.CVV}}" /> <br/>
+      <input type="submit" value="Confirm Booking"/>
+    </div>
+    </form> 
+  </fieldset>
+    <a href="/">Go to Home Page</a>
+  </p>
+</body>
+

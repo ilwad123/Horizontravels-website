@@ -1,0 +1,39 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bookingconfirm.css')}}">
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+    <div class="container1">
+    <fieldset>
+    <div class="text">
+    Booking ID: {{resultset[8]}} <br/> <!--flightID-->
+    Departure City : {{resultset[1]}} <br/>
+    Departure Date : {{resultset[3]}} <br/>
+    Departure Time : {{resultset[9]}} <br/>
+    Arrival City : {{resultset[2]}} <br/>  
+    Arrival Time : {{resultset[10]}} <br/>
+    Return Date : {{resultset[4]}} <br/>
+    Adult Seats : {{resultset[5]}} <br/>
+    Child Seats : {{resultset[6]}} <br/>
+    Total Fare : {{resultset[7]}} <br/>
+    Payment: Card ending with ****** {{cardNo}} <br/>
+    <input type="hidden" name="totalprice" value="{{resultset[7]}}" /> 
+    <input type="hidden" name="BookingID" value="{{resultset[8]}}" />   
+      <input type="submit" value="Go back to home page" onclick="location.href='/';">
+    </div>
+    </form>  
+  </div>
+  </fieldset>
+</body>
+  
+  
+  
+  
+
+

@@ -1,0 +1,35 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<html>
+    <head>
+    </head>
+    <title>Generate admin report-all customers information</title>
+    <a href="adminuser">Back to admin page</a>
+    <form action='/generateadminreport' method="POST">   
+        <table border = 1>
+            <tr>
+              <th>CustID</th>
+              <th>Booking ID</th>
+              <th>Departure Date</th>
+              <th>Arrival Date</th>
+              <th>Destination</th>
+              <th>Arrival</th>
+              <th>Flight ID</th>
+              <th>Total Price</th>
+              <th>Class</th>
+            </tr>
+            {% for row in datarows %}
+              <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+      </form>

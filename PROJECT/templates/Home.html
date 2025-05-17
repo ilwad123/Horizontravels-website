@@ -1,0 +1,180 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/website20.css')}}">
+  <script src="{{url_for('static',filename='depart.js')}}"></script> 
+  <script src="{{url_for('static',filename='datetime.js')}}"></script> 
+
+
+</head>
+
+    <header>
+    <nav class="navbar">
+      <img src="static/images/horizonlogo.jpg" height="50px;">
+      
+      <div class="container">
+    <ul class="menu">
+    {% if session.logged_in %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+      </li>
+     <li class="nav-item">
+      <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+      </li>
+    <li class="nav-item">
+     <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+      </li>  
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+           </li> 
+    {%else%}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+      </li>
+     <li class="nav-item">
+      <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+      </li>
+    <li class="nav-item">
+     <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+      </li>  
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for ('Login')}}">Login</a>
+       </li> 
+      {%endif%}
+    </ul>
+  </div>
+    <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    </div>
+    </nav>
+    </header>
+    <script src="{{url_for('static',filename='hamburger.js')}}"></script> 
+    <div class="section2">
+      <p style="color:red;font-size:20px;font-family:Arial,bold;background-color:rgb(239, 239, 227)">{{optionalmessage}}</p>
+
+<br>
+<br>
+<div class="img" src="static/images/airballoon.jpg">
+<h1>Make your dreams come true </h1>
+<body onload="initialdate()">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<fieldset>
+<form action="/selectBooking/" method="POST">
+<div class="From">
+<select id="Destination" name="departureslist" class="form-control" onchange="getarrivalcity(this.value)">
+  <option value="" disabled selected hidden style="color:gray;">Departure</option>
+  {% for city in departurelist %}
+    <option value="{{ city }}">{{ city }}</option>
+  {% endfor %}
+</select>
+  </div>
+  
+<div class="Destination"> 
+<select id="arrivalslist" name="arrivalslist" placeholder="Arrival" class="form-control">
+<datalist id="Arrival">
+  <option value="" disabled selected hidden>Arrival</option>
+
+
+    </datalist>
+  </select>
+  </div>      
+
+<div class="form-group">
+<input type="number"class="form-control" id="Childseat" name="Childseat" min="0" placeholder="Child" required>
+</div>
+<div class="form-group">
+<input type="number"class="form-control" id="Childseat" name="Adultseat" min="1" placeholder="Adult"  required>
+</div>
+<div class="depart">
+    <input type="date" name="Departure_date" id="Departure_date" class="form-control" onchange="setenddate()" required>
+    </div>
+    <div class="arrival">
+        <input type="date" name="Arrival_date" id="Arrival_date" placeholder="Arrival date" class="form-control"  required>
+        </div>
+  <div class="class" class="form-control">
+  <select id="Class" name="Class" class="form-control">
+    <option value="" disabled selected>Select class</option>
+    <option value="Economy">Economy</option>
+    <option value="Business">Business</option>
+  </select>
+</div>
+    </div>
+<div class="submit">
+<input type="submit" value="Search" >
+</div>
+</form>
+</fieldset>
+</div>
+</div>
+<br>
+<br>
+<h2>FEATURED PLACES</h2> 
+<h3>Up to 50% off this summer</h3>
+<div class="contain">
+<div class="image-mosaic">
+  <div class="card card-tall" style="background-image: url(static/images/london.jpg)">LONDON</div>
+  <div class="card" style="background-image: url(static/images/dundee.webp)">DUNDEE</div>
+  <div class="card" style="background-image: url(static/images/bristol.jpg)">BRISTOL</div>
+  <div class="card " style="background-image: url(static/images/newcastle.webp)">NEWCASTLE</div>
+  <div class="card" style="background-image: url(static/images/manchester.webp)">MANCHESTER</div>
+  <div class="card" style="background-image: url(static/images/portsmouth.webp)">PORTSMOUTH</div>
+  <div class="card " style="background-image: url(static/images/birmingham.jpg)">BIRMINGHAM</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<h2>TRAVELLER REVIEWS</h2>
+<div class="review-section">
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p class="review-text">“Amazing experience! Booking was smooth and everything was well organized.”</p>
+    <p class="review-author">– Sarah K.</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p class="review-text">“Excellent service and very responsive customer support!”</p>
+    <p class="review-author">– David M.</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p class="review-text">“Loved the destinations and deals. Will travel with you again!”</p>
+    <p class="review-author">– Amina A.</p>
+  </div>
+</div>
+
+<footer class="footer">
+{% if session.logged_in %}
+  <a href="{{ url_for ('Home')}}">Home</a>
+  <a href="{{url_for('mybooking')}}">My bookings</a>
+  <a href="{{ url_for ('Policy')}}">Policy</a>
+  <a href="{{url_for('logout')}}">Logout</a>
+{%else%}
+<a href="{{ url_for ('Home')}}">Home</a>
+<a href="{{url_for('mybooking')}}">My bookings</a>
+<a href="{{ url_for ('Policy')}}">Policy</a>
+<a href="{{ url_for ('Login1')}}">Login</a>
+<a href="{{url_for('Register')}}">Sign up</a>
+{%endif%}
+</footer>
+</html>

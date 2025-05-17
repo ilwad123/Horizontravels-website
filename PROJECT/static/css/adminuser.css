@@ -1,0 +1,92 @@
+
+button {
+  background-color: #e84e36;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  height: 80px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+/* 
+.size{
+padding: 20;
+} */
+
+.size {
+  display: flex;
+  justify-content: flex-start; 
+  flex-wrap: wrap;
+  gap: 40px; 
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+body,html{
+        background:url("../images/land.jpg");
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        }
+h1 {
+  font-size: 48px;
+  color: white;
+  text-align: left;
+  margin-left:20px;
+  margin-top: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* makes white text pop on any background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+  color: white;
+  text-align: left;
+  margin-left:20px;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+text-decoration: none;
+color: white;
+font-size: 20px;
+}
+
+.admin-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+        margin-top: 20px;
+}
+.admin-links a {
+  color: white;
+  font-size: 18px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-links a:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}

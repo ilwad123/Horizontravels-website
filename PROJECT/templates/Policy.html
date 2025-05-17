@@ -1,0 +1,181 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/policy.css')}}">
+</head>
+    <header>
+    <nav class="navbar">
+      <img src="static/images/horizonlogo.jpg" height="50px;">
+      
+      <div class="container">
+    <ul class="menu">
+      {% if session.logged_in %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+        </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+        </li>
+      <li class="nav-item">
+       <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+        </li>  
+      <li class="nav-item">
+          <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+             </li> 
+      {%else%}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+        </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+        </li>
+      <li class="nav-item">
+       <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+        </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for ('Login')}}">Login</a>
+         </li> 
+        {%endif%}
+      </ul>
+  </div>
+    <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    </div>
+    </nav>
+    </header>
+    <script src="{{url_for('static',filename='hamburger.js')}}"></script>
+    <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <button class="accordion">Cancellation policy</button>
+<div class="panel">
+  <p>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+          <th>Number of days advanced in booking</th>
+          <th>Discount % on total booking price</th>
+        </tr>
+        <tr>
+            <td>Between 80 and 90 days</td>
+            <td>20%</td>
+          </tr>  
+          <tr>
+            <td>Between 60 and 79 days</td>
+            <td>10%</td>
+          </tr>    
+          <tr>
+            <td>Between 45 and 59 days</td>
+            <td>5%</td>
+          </tr>   
+          <tr>
+            <td>Under 45 days</td>
+            <td>No discount</td>
+          </tr>         
+        </table>    
+        <br>
+        <br>
+        <br>
+  </p>
+</div>
+
+<button class="accordion">Terms and conditions</button>
+<div class="panel">
+  <a class="term" href='/termsandcondition'> Link to Terms and conditions</a>
+</div>
+<button class="accordion">What type of information do we collect? </button>
+<div class="panel">
+    <p>
+        <ul>
+            <li>-Names</li>
+            <li>-Email Address</li>
+            <li>-Mobile numbers</li>
+            <li>-Usernames</li>
+            <li>-Password</li>
+            <li>-Account number</li>
+            <li>-Sort code</li>
+            <li>-CVC</li>
+          </ul>    
+    </p>
+</div>
+
+<button class="accordion">Why is this infomation collected?</button>
+<div class="panel">
+  <p>Information is collected so customers can view bookings,  once logged in and can cancel their bookings.  </p>
+</div>
+
+<button class="accordion">How is this infomation collected?</button>
+<div class="panel">
+  <p><ul>
+    <li>-Registation forms</li>
+    <li>-Login form </li>
+    <li>-Payment form to place booking</li>
+  </ul>
+  </p>
+</div>
+
+</div><button class="accordion">What will this infomation be used for ?</button>
+<div class="panel">
+  <p>Users can create accounts under Horizon travels and log into website.
+    Be able to access their bookings and book flights.
+    Pay for their flights and if needed cancelling can have their money refunded.
+  </p>
+</div>
+
+</div><button class="accordion">What will this infomation be used for ?</button>
+<div class="panel">
+  <p>Users can create accounts under Horizon travels and log into website.
+    Be able to access their bookings and book flights.
+    Pay for their flights and if needed cancelling can have their money refunded.
+  </p>
+</div>
+
+</div><button class="accordion">How will my data be protected ?</button>
+<div class="panel">
+  <p>Passwords will be encrypted and admin can not access those passowrds.
+  </p>
+</div>
+
+
+<script src="{{url_for('static',filename='dropdown.js')}}"></script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <footer class="footer">
+    {% if session.logged_in %}
+      <a href="{{ url_for ('Home')}}">Home</a>
+      <a href="{{url_for('mybooking')}}">My bookings</a>
+      <a href="{{ url_for ('Policy')}}">Policy</a>
+      <a href="{{url_for('logout')}}">Logout</a>
+    {%else%}
+    <a href="{{ url_for ('Home')}}">Home</a>
+    <a href="{{url_for('mybooking')}}">My bookings</a>
+    <a href="{{ url_for ('Policy')}}">Policy</a>
+    <a href="{{ url_for ('Login1')}}">Login</a>
+    <a href="{{url_for('Register')}}">Sign up</a>
+    {%endif%}
+    </footer>
+    </html>
+</html>

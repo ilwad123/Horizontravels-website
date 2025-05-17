@@ -1,0 +1,111 @@
+<!--Ilwad Abdi student id =22014624-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  </head>
+<header>
+    <nav class="navbar">
+      <img src="{{url_for('static',filename='images/horizonlogo.jpg')}}" height="50px;">
+      
+      <div class="container">
+        <ul class="menu">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for ('Home')}}">Home</a>
+          </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{{url_for('mybooking')}}">My bookings</a>
+          </li>
+        <li class="nav-item">
+         <a class="nav-link" href="{{ url_for ('Policy')}}">Policy</a>
+          </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for ('Login')}}">Login</a>
+           </li> 
+        </ul>
+  </div>
+    <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    </div>
+    </nav>
+    </header>
+    <script src="{{url_for('static',filename='hamburger.js')}}"></script>
+  </header>
+<body>
+<br>
+<br>
+<br>
+<fieldset>
+  <br>
+  <br>
+  <br>
+  <div class="container1">
+    <div class="title">Registration</div>
+    <br>
+    <div class="content">
+    <form action="/Signup/" method="POST">
+      <p style="color:red;">{{error}} </p>
+      <div class="user">
+            <div class="name">
+            <div class="input-box">
+              <input type="text"  placeholder="First name"name="Fname" value="{{request.form.Fname}}" required style="height:40px">
+            </div>
+           </div>
+           <br>
+           <div class="surname">
+            <div class="input-box">
+              <input type="text" placeholder="Surname"name="Sname" value="{{request.form.Sname}}"required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <div class="username">
+            <div class="input-box">
+            <input type="text"placeholder="Username" name="username" value="{{request.form.username}}"required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <div class="email">
+            <div class="input-box">
+              <input type="email"  placeholder="Email" name="email" value="{{request.form.email}}" required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <div class="password">
+            <div class="input-box">
+              <input type="password" placeholder="Password" name="password" value="{{request.form.password}}" required style="height:40px">
+            </div>
+          </div>
+          <br>
+          <div class="confirm">
+            <div class="input-box">
+              <input type="password" placeholder="Confirm password" required style="height:40px">
+            </div>
+            </div>
+            <br>
+            <label>
+              <input type="checkbox" name="subscribe" value="yes" required>
+              I agree and consent to the privacy policy and Terms and conditions
+            </label>
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</fieldset>
+<footer class="footer">
+  <a href="{{ url_for ('Home')}}">Home</a>
+  <a href="{{url_for('mybooking')}}">My bookings</a>
+  <a href= "{{url_for('Login1')}}">Login</a>
+  <a href="{{url_for('Register')}}">Sign up</a>
+  <a href="{{ url_for ('Policy')}}">Policy</a>
+  </footer>
+  </body>
+</html>
