@@ -1,22 +1,32 @@
 
 # Horizon Travel Airlines – Full-Stack Web Application
 
-This is a full-stack airline ticket booking system for UK domestic travel, developed as part of my university Software Lab coursework. It includes secure user authentication, a customer-facing booking platform, and an admin dashboard to manage all user activity and bookings.
+This project began as a university **Software Lab coursework** for developing a UK domestic airline booking system. After completing the coursework, I **extended it further** by:
+
+- Adding Docker support for easier local deployment  
+- Deploying the system live on the cloud via **PythonAnywhere**  
+- Improving structure and maintainability  
+
+The result is a **full-stack web application** for booking flights, with admin tools and secure user functionality.
 
 ---
 
-##  Demo
+## Live Demo
 
-You can watch the video to see break down analysis of development and the websites functionality live. 
+You can try the live site here:  
+🔗 **[https://ilwad.pythonanywhere.com/](https://ilwad.pythonanywhere.com/)**  
+Make bookings, browse flights, or log in as an admin.
 
-**All source code is located in the `PROJECT/` folder.**
 ---
 
+> 💡 All source code is located in the `PROJECT/` folder.
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: Python (Flask)  
-- **Database**: MySQL  
+- **Database**: MySQL
+- **Cloud**:pythonanywhere
+- **Containerisation**: Docker (for local development/testing)
 
 ---
 
@@ -32,12 +42,4 @@ You can watch the video to see break down analysis of development and the websit
 
 ---
 
-## ⚙️ How to Run the App Locally
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/yourusername/Horizontravels-website.git
-
----
-
-> **Note**: This project was created as part of my web development  module.
