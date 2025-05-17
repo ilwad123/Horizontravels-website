@@ -15,7 +15,9 @@ The result is a **full-stack web application** for booking flights, with admin t
 
 You can try the live site here:  
 🔗 **[https://ilwad.pythonanywhere.com/](https://ilwad.pythonanywhere.com/)**  
-Make bookings, browse flights, or log in as an admin.
+
+You can register, book a flight, view your trips, or log in as admin to manage everything.
+
 
 ---
 
