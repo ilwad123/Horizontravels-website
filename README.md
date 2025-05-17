@@ -22,6 +22,7 @@ You can register, book a flight, view your trips, or log in as admin to manage e
 ---
 
 > 💡 All source code is located in the `PROJECT/` folder.
+> SQL database structure in TABLE.sql file 
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript  
